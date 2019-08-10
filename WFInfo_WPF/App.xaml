@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:WFInfo_WPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source = "ResourceDictionary\TestDictionary.xaml"/>
+                <ResourceDictionary Source = "ResourceDictionary\SliderDictionary.xaml"/>
+                <ResourceDictionary Source = "ResourceDictionary\LabelDictionary.xaml"/>
+                <ResourceDictionary Source = "ResourceDictionary\ComboBoxDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
+        
 </Application>

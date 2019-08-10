@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WFInfo_WPF"
         mc:Ignorable="d"
-        Title="WFInfo" Height="131" Width="335" WindowStyle="None" ResizeMode="NoResize">
+        Title="WFInfo" Height="131" Width="335" WindowStyle="None" ResizeMode="NoResize" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen">
     <DockPanel HorizontalAlignment="Center" Height="131" LastChildFill="False" VerticalAlignment="Center" Width="335">
         <Border BorderBrush="#FF646464" BorderThickness="0,0,0,1" Height="30" VerticalAlignment="Center" Width="335" HorizontalAlignment="Center" DockPanel.Dock="Top">
-            <DockPanel HorizontalAlignment="Center" Height="30" LastChildFill="False" Margin="0" VerticalAlignment="Center" Width="335" Background="#FF0F0F0F">
-                <Image Height="30" VerticalAlignment="Bottom" Width="30" HorizontalAlignment="Right" Source="Resources/WFLogo.png"/>
-                <Label Content="WFInfo" Height="30" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Background="Transparent" Foreground="#FFB1D0D9" FontFamily="Cambria" FontWeight="Bold" FontSize="15" Width="60" VerticalContentAlignment="Center"/>
-                <Label Content="vX.X.X" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFB1D0D9" Width="190" FontSize="11" FontFamily="Cambria" FontWeight="Bold"/>
-                <Button Content="x" Height="25" VerticalAlignment="Center" Width="25" DockPanel.Dock="Right" HorizontalAlignment="Center" Margin="2,0,3,0" Foreground="#FFB1D0D9" Background="#FF0F0F0F"/>
-                <Button Content="_" Height="25" VerticalAlignment="Center" Width="25" DockPanel.Dock="Right" HorizontalAlignment="Center" Foreground="#FFB1D0D9" Background="#FF0F0F0F"/>
+            <DockPanel x:Name="titleBar" HorizontalAlignment="Center" Height="30" LastChildFill="False" Margin="0" VerticalAlignment="Center" Width="335" Background="#FF0F0F0F">
+                <Image Height="30" VerticalAlignment="Center" Width="30" HorizontalAlignment="Center" Source="Resources/WFLogo.png"/>
+                <Label Style="{StaticResource TitleLabel}" Content="WFInfo" Height="30" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Background="Transparent" Width="60" VerticalContentAlignment="Center"/>
+                <Label Style="{StaticResource TitleLabel}" Content="vX.X.X" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Width="190" FontSize="11"/>
+                <Button Content="x" Height="25" VerticalAlignment="Center" Width="25" DockPanel.Dock="Right" HorizontalAlignment="Center" Margin="2,0,3,0" Foreground="#FFB1D0D9" Background="#FF0F0F0F" BorderBrush="#FF646464" FontFamily="Tahoma" FontWeight="Bold" FontSize="14.667" VerticalContentAlignment="Top" Click="CloseButton_Click"/>
+                <Button Content="━" Height="25" VerticalAlignment="Center" Width="25" DockPanel.Dock="Right" HorizontalAlignment="Center" Foreground="#FFB1D0D9" Background="#FF0F0F0F" BorderBrush="#FF646464" FontFamily="Tahoma" FontSize="9.333" FontWeight="Bold" VerticalContentAlignment="Bottom"/>
             </DockPanel>
         </Border>
         <DockPanel LastChildFill="False" VerticalAlignment="Center" DockPanel.Dock="Bottom" Margin="0" Width="335" Height="101" HorizontalAlignment="Center">
@@ -22,7 +22,18 @@
                     <Image Height="23" Source="Resources/Icons/home_icon.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2,0,0"/>
                     <Image Source="Resources/Icons/relic_icon.png" VerticalAlignment="Center" HorizontalAlignment="Center" Height="23" Margin="0,2,0,0"/>
                     <Image Height="23" Source="Resources/Icons/foundry_icon.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2,0,0"/>
-                    <Image Height="23" Source="Resources/Icons/settings_icon.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2,0,0"/>
+                    <Image x:Name="settingsIcon" Height="23" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2,0,0" MouseLeftButtonUp="SettingsIcon_Click">
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="Resources/Icons/settings_icon.png"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Source" Value="Resources/Icons/settings_icon_h.png"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
                 </StackPanel>
             </Border>
             <Border BorderBrush="#FF646464" BorderThickness="0,1,0,0" Height="20" VerticalAlignment="Center" Width="306" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Background="#FF1B1B1B">
@@ -32,14 +43,14 @@
                 </StackPanel>
             </Border>
             <StackPanel Height="81" VerticalAlignment="Top" Width="153" Background="#FF1B1B1B">
-                <Label Content="Market Data:" HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Foreground="#FFB1D0D9" FontSize="15" FontFamily="Tahoma" FontWeight="Bold"/>
-                <Label Content="Drop Data:" HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Foreground="#FFB1D0D9" FontSize="15" FontFamily="Tahoma" FontWeight="Bold"/>
-                <Label Content="Wiki Data:" HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Foreground="#FFB1D0D9" FontFamily="Tahoma" FontSize="15" FontWeight="Bold"/>
+                <Label Style="{StaticResource ContentLabel}" Content="Market Data:" HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                <Label Style="{StaticResource ContentLabel}" Content="Drop Data:" HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                <Label Style="{StaticResource ContentLabel}" Content="Wiki Data:" HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
             </StackPanel>
             <StackPanel Height="81" VerticalAlignment="Top" Width="153" Background="#FF1B1B1B">
-                <Label Content="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" VerticalContentAlignment="Center" Foreground="#FFB1D0D9" FontSize="15" FontFamily="Tahoma" FontWeight="Bold"/>
-                <Label Content="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" VerticalContentAlignment="Center" Foreground="#FFB1D0D9" FontSize="15" FontFamily="Tahoma" FontWeight="Bold"/>
-                <Label Content="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" VerticalContentAlignment="Center" Foreground="#FFB1D0D9" FontFamily="Tahoma" FontSize="15" FontWeight="Bold"/>
+                <Label Style="{StaticResource ContentLabel}" Content="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" VerticalContentAlignment="Center"/>
+                <Label Style="{StaticResource ContentLabel}" Content="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" VerticalContentAlignment="Center"/>
+                <Label Style="{StaticResource ContentLabel}" Content="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" VerticalContentAlignment="Center"/>
             </StackPanel>
         </DockPanel>
     </DockPanel>
