@@ -6,10 +6,11 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source = "ResourceDictionary\TestDictionary.xaml"/>
-                <ResourceDictionary Source = "ResourceDictionary\SliderDictionary.xaml"/>
-                <ResourceDictionary Source = "ResourceDictionary\LabelDictionary.xaml"/>
-                <ResourceDictionary Source = "ResourceDictionary\ComboBoxDictionary.xaml"/>
+                <ResourceDictionary Source = "ResourceDictionaries\TestDictionary.xaml"/>
+                <ResourceDictionary Source = "ResourceDictionaries\SliderDictionary.xaml"/>
+                <ResourceDictionary Source = "ResourceDictionaries\LabelDictionary.xaml"/>
+                <ResourceDictionary Source = "ResourceDictionaries\ComboBoxDictionary.xaml"/>
+                <ResourceDictionary Source = "ResourceDictionaries\TrayIconDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

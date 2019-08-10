@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hardcodet.Wpf.TaskbarNotification;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -24,11 +25,18 @@ namespace WFInfo_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private TaskbarIcon trayIcon;
         public MainWindow()
         {
             InitializeComponent();
             WindowsStaticObject.MainWindow = this;
             this.titleBar.MouseDown += titleBarMouseDown;
+
+            //initialize NotifyIcon
+            WindowsStaticObject.TrayIcon = (TaskbarIcon)FindResource("TrayIcon");
+            trayIcon = WindowsStaticObject.TrayIcon;
+            trayIcon.Visibility = Visibility.Collapsed;
+
         }
 
         private void titleBarMouseDown(object sender, MouseButtonEventArgs e)
@@ -42,10 +50,7 @@ namespace WFInfo_WPF
             Window mainWindow = WindowsStaticObject.MainWindow;
             Window settingsWindow = WindowsStaticObject.SettingsWindow;
 
-            if (settingsWindow == null)
-            {
-                settingsWindow = new SettingsWindow();
-            } else if (settingsWindow.Visibility == Visibility.Visible) {
+            if (settingsWindow.Visibility == Visibility.Visible) {
                 settingsWindow.Hide();
                 return;
             }
@@ -75,19 +80,11 @@ namespace WFInfo_WPF
             System.Windows.Application.Current.Shutdown();
         }
 
-        //[DllImport("user32.dll")]
-        //private static extern int GetWindowLong(IntPtr hWnd, int nIndex);
-        //[DllImport("user32.dll")]
-        //private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+        private void IconButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            trayIcon.Visibility = Visibility.Visible;
+        }
 
-        //private const int GWL_STYLE = -16;
-        //private const int WS_MAXIMIZEBOX = 0x10000;
-
-        //private void Window_SourceInitialized(object sender, EventArgs e)
-        //{
-        //    var hwnd = new WindowInteropHelper((Window)sender).Handle;
-        //    var value = GetWindowLong(hwnd, GWL_STYLE);
-        //    SetWindowLong(hwnd, GWL_STYLE, (int)(value & ~WS_MAXIMIZEBOX));
-        //}
     }
 }

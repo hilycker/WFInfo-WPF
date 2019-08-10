@@ -13,7 +13,7 @@
                 <Label Style="{StaticResource TitleLabel}" Content="WFInfo" Height="30" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Background="Transparent" Width="60" VerticalContentAlignment="Center"/>
                 <Label Style="{StaticResource TitleLabel}" Content="vX.X.X" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Width="190" FontSize="11"/>
                 <Button Content="x" Height="25" VerticalAlignment="Center" Width="25" DockPanel.Dock="Right" HorizontalAlignment="Center" Margin="2,0,3,0" Foreground="#FFB1D0D9" Background="#FF0F0F0F" BorderBrush="#FF646464" FontFamily="Tahoma" FontWeight="Bold" FontSize="14.667" VerticalContentAlignment="Top" Click="CloseButton_Click"/>
-                <Button Content="━" Height="25" VerticalAlignment="Center" Width="25" DockPanel.Dock="Right" HorizontalAlignment="Center" Foreground="#FFB1D0D9" Background="#FF0F0F0F" BorderBrush="#FF646464" FontFamily="Tahoma" FontSize="9.333" FontWeight="Bold" VerticalContentAlignment="Bottom"/>
+                <Button Content="━" Height="25" VerticalAlignment="Center" Width="25" DockPanel.Dock="Right" HorizontalAlignment="Center" Foreground="#FFB1D0D9" Background="#FF0F0F0F" BorderBrush="#FF646464" FontFamily="Tahoma" FontSize="9.333" FontWeight="Bold" VerticalContentAlignment="Bottom" Click="IconButton_Click"/>
             </DockPanel>
         </Border>
         <DockPanel LastChildFill="False" VerticalAlignment="Center" DockPanel.Dock="Bottom" Margin="0" Width="335" Height="101" HorizontalAlignment="Center">
