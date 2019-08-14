@@ -37,7 +37,7 @@
                 <TreeViewItem Header="Secondary" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFB1D0D9" Width="460"/>
                 <TreeViewItem Header="Melee" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFB1D0D9" Width="460"/>
                 <TreeViewItem Header="Archwing" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFB1D0D9" Width="460"/>
-                <TreeViewItem x:Name="companion" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFB1D0D9" IsExpanded="True">
+                <TreeViewItem x:Name="companionb" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFB1D0D9" IsExpanded="True">
                     <TreeViewItem.Header>
                         <Label Width="{Binding ActualWidth, ElementName=companion}" Content="Companion" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </TreeViewItem.Header>

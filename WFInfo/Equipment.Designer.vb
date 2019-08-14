@@ -25,6 +25,12 @@ Partial Class Equipment
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Warframe")
+        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Primary")
+        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Secondary")
+        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Melee")
+        Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Archwing")
+        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Companion")
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Equipment))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -39,6 +45,9 @@ Partial Class Equipment
         Me.Line2 = New System.Windows.Forms.Label()
         Me.Line3 = New System.Windows.Forms.Label()
         Me.BottomResize = New System.Windows.Forms.Panel()
+        Me.EqmtTree1 = New WFInfo.DoubleBufferedTreeView()
+        Me.EqmtTree2 = New WFInfo.DoubleBufferedTreeView()
+        Me.EqmtTree3 = New WFInfo.DoubleBufferedTreeView()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -177,6 +186,9 @@ Partial Class Equipment
         Me.Panel3.Controls.Add(Me.Line2)
         Me.Panel3.Controls.Add(Me.Line3)
         Me.Panel3.Controls.Add(Me.BottomResize)
+        Me.Panel3.Controls.Add(Me.EqmtTree3)
+        Me.Panel3.Controls.Add(Me.EqmtTree1)
+        Me.Panel3.Controls.Add(Me.EqmtTree2)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.Label4)
@@ -219,6 +231,62 @@ Partial Class Equipment
         Me.BottomResize.Name = "BottomResize"
         Me.BottomResize.Size = New System.Drawing.Size(444, 5)
         Me.BottomResize.TabIndex = 28
+        '
+        'EqmtTree1
+        '
+        Me.EqmtTree1.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(27, Byte), Integer))
+        Me.EqmtTree1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.EqmtTree1.CausesValidation = False
+        Me.EqmtTree1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText
+        Me.EqmtTree1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.EqmtTree1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.EqmtTree1.FullRowSelect = True
+        Me.EqmtTree1.Location = New System.Drawing.Point(-1, 22)
+        Me.EqmtTree1.Name = "EqmtTree1"
+        TreeNode1.Name = "warframe"
+        TreeNode1.Text = "Warframe"
+        TreeNode2.Name = "primary"
+        TreeNode2.Text = "Primary"
+        TreeNode3.Name = "secondary"
+        TreeNode3.Text = "Secondary"
+        TreeNode4.Name = "melee"
+        TreeNode4.Text = "Melee"
+        TreeNode5.Name = "archwing"
+        TreeNode5.Text = "Archwing"
+        TreeNode6.Name = "companion"
+        TreeNode6.Text = "Companion"
+        Me.EqmtTree1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2, TreeNode3, TreeNode4, TreeNode5, TreeNode6})
+        Me.EqmtTree1.Size = New System.Drawing.Size(473, 310)
+        Me.EqmtTree1.TabIndex = 27
+        '
+        'EqmtTree2
+        '
+        Me.EqmtTree2.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(27, Byte), Integer))
+        Me.EqmtTree2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.EqmtTree2.CausesValidation = False
+        Me.EqmtTree2.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText
+        Me.EqmtTree2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.EqmtTree2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.EqmtTree2.FullRowSelect = True
+        Me.EqmtTree2.Location = New System.Drawing.Point(-1, 22)
+        Me.EqmtTree2.Name = "EqmtTree2"
+        Me.EqmtTree2.Size = New System.Drawing.Size(473, 310)
+        Me.EqmtTree2.TabIndex = 26
+        '
+        'EqmtTree3
+        '
+        Me.EqmtTree3.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(27, Byte), Integer))
+        Me.EqmtTree3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.EqmtTree3.CausesValidation = False
+        Me.EqmtTree3.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText
+        Me.EqmtTree3.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.EqmtTree3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.EqmtTree3.FullRowSelect = True
+        Me.EqmtTree3.Location = New System.Drawing.Point(-1, 22)
+        Me.EqmtTree3.Name = "EqmtTree2"
+        Me.EqmtTree3.Size = New System.Drawing.Size(473, 310)
+        Me.EqmtTree3.TabIndex = 29
+        Me.EqmtTree3.Visible = False
         '
         'Label6
         '

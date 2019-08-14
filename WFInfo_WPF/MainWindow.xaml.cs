@@ -1,4 +1,4 @@
-﻿using Hardcodet.Wpf.TaskbarNotification;
+using Hardcodet.Wpf.TaskbarNotification;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -50,15 +50,17 @@ namespace WFInfo_WPF
             Window mainWindow = WindowsStaticObject.MainWindow;
             Window settingsWindow = WindowsStaticObject.SettingsWindow;
 
-            if (settingsWindow.Visibility == Visibility.Visible) {
+            if (settingsWindow.Visibility == Visibility.Visible)
+            {
                 settingsWindow.Hide();
                 return;
             }
 
-            if(SystemParameters.PrimaryScreenWidth - (mainWindow.Left +  mainWindow.Width) < settingsWindow.Width)
+            if (SystemParameters.PrimaryScreenWidth - (mainWindow.Left + mainWindow.Width) < settingsWindow.Width)
             {
                 settingsWindow.Left = mainWindow.Left - settingsWindow.Width - 10;
-            } else
+            }
+            else
             {
                 settingsWindow.Left = mainWindow.Left + mainWindow.Width + 10;
             }
@@ -66,7 +68,8 @@ namespace WFInfo_WPF
             if (SystemParameters.PrimaryScreenHeight - (mainWindow.Top + mainWindow.Height) < settingsWindow.Height)
             {
                 settingsWindow.Top = mainWindow.Top - (settingsWindow.Height - mainWindow.Height);
-            } else
+            }
+            else
             {
                 settingsWindow.Top = mainWindow.Top;
             }
