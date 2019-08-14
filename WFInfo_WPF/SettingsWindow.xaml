@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WFInfo_WPF"
         mc:Ignorable="d"
-        Title="SettingsWindow" Height="280" Width="320" WindowStyle="None" HorizontalAlignment="Center" VerticalAlignment="Center" ResizeMode="NoResize">
+        Title="SettingsWindow" Height="280" Width="320" WindowStyle="None" HorizontalAlignment="Center" VerticalAlignment="Center" ResizeMode="NoResize" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
 
     <!--<Window.Resources>
         <ResourceDictionary>

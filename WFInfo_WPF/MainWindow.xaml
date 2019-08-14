@@ -21,7 +21,7 @@
                 <StackPanel Height="101" Width="29" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1,0,0,0">
                     <Image Height="23" Source="Resources/Icons/home_icon.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2,0,0"/>
                     <Image Source="Resources/Icons/relic_icon.png" VerticalAlignment="Center" HorizontalAlignment="Center" Height="23" Margin="0,2,0,0"/>
-                    <Image Height="23" Source="Resources/Icons/foundry_icon.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2,0,0"/>
+                    <Image x:Name="equipmentIcon" Height="23" Source="Resources/Icons/foundry_icon.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2,0,0" MouseLeftButtonUp="EquipmentIcon_Click"/>
                     <Image x:Name="settingsIcon" Height="23" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2,0,0" MouseLeftButtonUp="SettingsIcon_Click">
                         <Image.Style>
                             <Style TargetType="{x:Type Image}">

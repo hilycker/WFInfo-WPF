@@ -24,11 +24,11 @@ namespace WFInfo_WPF
             set { settingsWindow = value; }
         }
 
-        private static Window testWindow = null;
-        public static Window TestWindow
+        private static Window equipmentWindow = new EquipmentWindow();
+        public static Window EquipmentWindow
         {
-            get { return testWindow; }
-            set { testWindow = value; }
+            get { return equipmentWindow; }
+            set { equipmentWindow = value; }
         }
 
         private static TaskbarIcon trayIcon;

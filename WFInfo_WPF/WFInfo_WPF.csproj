@@ -79,6 +79,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EquipmentWindow.xaml.cs">
+      <DependentUpon>EquipmentWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ResourceDictionaries\TrayIconDictionary.xaml.cs">
       <DependentUpon>TrayIconDictionary.xaml</DependentUpon>
     </Compile>
@@ -87,6 +90,10 @@
     </Compile>
     <Compile Include="TrayIconEvents.cs" />
     <Compile Include="WindowsStaticObject.cs" />
+    <Page Include="EquipmentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

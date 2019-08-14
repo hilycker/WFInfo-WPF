@@ -74,6 +74,38 @@ namespace WFInfo_WPF
             settingsWindow.Show();
         }
 
+        private void EquipmentIcon_Click(object sender, MouseEventArgs e)
+        {
+            Window mainWindow = WindowsStaticObject.MainWindow;
+            Window equipmentWindow = WindowsStaticObject.EquipmentWindow;
+
+            if (equipmentWindow.Visibility == Visibility.Visible)
+            {
+                equipmentWindow.Hide();
+                return;
+            }
+
+            if (SystemParameters.PrimaryScreenWidth - (mainWindow.Left + mainWindow.Width) < equipmentWindow.Width)
+            {
+                equipmentWindow.Left = mainWindow.Left - equipmentWindow.Width - 10;
+            }
+            else
+            {
+                equipmentWindow.Left = mainWindow.Left + mainWindow.Width + 10;
+            }
+
+            if (SystemParameters.PrimaryScreenHeight - (mainWindow.Top + mainWindow.Height) < equipmentWindow.Height)
+            {
+                equipmentWindow.Top = mainWindow.Top - (equipmentWindow.Height - mainWindow.Height);
+            }
+            else
+            {
+                equipmentWindow.Top = mainWindow.Top;
+            }
+
+            equipmentWindow.Show();
+        }
+
         private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Hide();
